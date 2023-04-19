@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character sheet</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="fila">
+        <div class="columna">
+            <h2>Información básica</h2>
+            <table>
+                <tr>
+                    <td>Nombre:</td>
+                    <td><input type="text" id="nombre"></td>
+                </tr>
+                <tr>
+                    <td>Raza:</td>
+                    <td><input type="text" id="raza"></td>
+                </tr>
+                <tr>
+                    <td>Clase:</td>
+                    <td><input type="text" id="clase"></td>
+                </tr>
+                <tr>
+                    <td>Nivel:</td>
+                    <td><input type="number" id="nivel"></td>
+                </tr>
+                <tr>
+                    <td>Trasfondo:</td>
+                    <td><input type="text" id="trasfondo"></td>
+                </tr>
+                <tr>
+                    <td>Alineamiento:</td>
+                    <td><input type="text" id="alineamiento"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="columna">
+            <h2>Atributos</h2>
+            <table>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Valor</th>
+                    <th>Modificador</th>
+                </tr>
+                <tr>
+                    <td>Fuerza</td>
+                    <td><input type="number" id="fuerza_valor" Placeholder="10"></td>
+                    <td><input type="number" id="fuerza_mod"></td>
+                </tr>
+                <tr>
+                    <td>Destreza</td>
+                    <td><input type="number" id="destreza_valor" Placeholder="10"></td>
+                    <td><input type="number" id="destreza_mod"></td>
+                </tr>
+                <tr>
+                    <td>Constitución</td>
+                    <td><input type="number" id="constitucion_valor" Placeholder="10"></td>
+                    <td><input type="number" id="constitucion_mod"></td>
+                </tr>
+                <tr>
+                    <td>Inteligencia</td>
+                    <td><input type="number" id="inteligencia_valor" Placeholder="10"></td>
+                    <td><input type="number" id="inteligencia_mod"></td>
+                </tr>
+                <tr>
+                    <td>Sabiduría</td>
+                    <td><input type="number" id="sabiduria_valor" Placeholder="10"></td>
+                    <td><input type="number" id="sabiduria_mod"></td>
+                </tr>
+                <tr>
+                    <td>Carisma</td>
+                    <td><input type="number" id="carisma_valor" Placeholder="10"></td>
+                    <td><input type="number" id="carisma_mod"></td>
+                </table>
+        </div>
+    </div>
+    <div class="columna">
+        <button onclick="miFuncion()">Guardar</button>
+    </div>
+</div>
+
+
+
+<script>
+function miFuncion() {
+  alert('Usted ha guardado el texto');
+}
+
+</script>
+
+</body>
+</html>
