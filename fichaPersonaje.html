@@ -50,48 +50,80 @@
                     <th>Valor</th>
                     <th>Modificador</th>
                 </tr>
+
                 <tr>
                     <td>Fuerza</td>
-                    <td><input type="number" id="fuerza_valor" Placeholder="10"></td>
-                    <td><input type="number" id="fuerza_mod"></td>
+                    <td><input type="number" id="fuerza_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="fuerza_mod" placeholder="0"></td>
                 </tr>
+
                 <tr>
                     <td>Destreza</td>
-                    <td><input type="number" id="destreza_valor" Placeholder="10"></td>
-                    <td><input type="number" id="destreza_mod"></td>
+                    <td><input type="number" id="destreza_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="destreza_mod"  placeholder="0"></td>
                 </tr>
+
                 <tr>
                     <td>Constitución</td>
-                    <td><input type="number" id="constitucion_valor" Placeholder="10"></td>
-                    <td><input type="number" id="constitucion_mod"></td>
+                    <td><input type="number" id="constitucion_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="constitucion_mod"  placeholder="0"></td>
                 </tr>
+
                 <tr>
                     <td>Inteligencia</td>
-                    <td><input type="number" id="inteligencia_valor" Placeholder="10"></td>
-                    <td><input type="number" id="inteligencia_mod"></td>
+                    <td><input type="number" id="inteligencia_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="inteligencia_mod"  placeholder="0"></td>
                 </tr>
+
                 <tr>
                     <td>Sabiduría</td>
-                    <td><input type="number" id="sabiduria_valor" Placeholder="10"></td>
-                    <td><input type="number" id="sabiduria_mod"></td>
+                    <td><input type="number" id="sabiduria_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="sabiduria_mod"  placeholder="0"></td>
                 </tr>
+
                 <tr>
                     <td>Carisma</td>
-                    <td><input type="number" id="carisma_valor" Placeholder="10"></td>
-                    <td><input type="number" id="carisma_mod"></td>
+                    <td><input type="number" id="carisma_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="carisma_mod"  placeholder="0"></td>
+                </tr>
+                
                 </table>
         </div>
     </div>
     <div class="columna">
-        <button onclick="miFuncion()">Guardar</button>
+        <button onclick="pruebaBoton()">Guardar</button>
     </div>
 </div>
 
 
 
 <script>
-function miFuncion() {
+function pruebaBoton() {
   alert('Usted ha guardado el texto');
+}
+
+function actualizarModificadores() {
+    
+    var puntosFuerza= document.getElementById("fuerza_valor").value;
+    document.getElementById("fuerza_mod").value=Math.floor((puntosFuerza-10)/2);
+
+    var puntosDestreza= document.getElementById("destreza_valor").value;
+    document.getElementById("destreza_mod").value=Math.floor((puntosDestreza-10)/2);
+
+    var puntosConstitucion= document.getElementById("constitucion_valor").value;
+    document.getElementById("constitucion_mod").value=Math.floor((puntosConstitucion-10)/2);
+
+    var puntosInteligencia= document.getElementById("inteligencia_valor").value;
+    document.getElementById("inteligencia_mod").value=Math.floor((puntosInteligencia-10)/2);
+
+    var puntosSabiduria= document.getElementById("sabiduria_valor").value;
+    document.getElementById("sabiduria_mod").value=Math.floor((puntosSabiduria-10)/2);
+
+    var puntosSabiduria= document.getElementById("sabiduria_valor").value;
+    document.getElementById("sabiduria_mod").value=Math.floor((puntosSabiduria-10)/2);
+
+    var puntosCarisma= document.getElementById("carisma_valor").value;
+    document.getElementById("carisma_mod").value=Math.floor((puntosCarisma-10)/2);
 }
 
 </script>
