@@ -20,4 +20,11 @@ if(mysqli_connect_errno()){
 }
 
 echo "Conexion aceptada!";
+
+
+$sql=" INSERT INTO personaje (Nombre, Raza, Clase, Nivel)
+        VALUES ('$nombre','$raza','$clase','$nivel')";
+
+
+echo "datos introducidos"
 ?>
