@@ -26,9 +26,6 @@ if ($result->num_rows > 0) {
   if ($result->num_rows > 0) {
     // Inicio de sesión exitoso, establecer cookie para el nombre de usuario
   setcookie("username", $username, time() + 3600); // vida útil de la cookie: 1 hora
-
-  header("Location: MainPage.php?username=" . urlencode($username)); // Redirigir al usuario a la página principal
-
   } else {
     echo "Contraseña incorrecta";
   }

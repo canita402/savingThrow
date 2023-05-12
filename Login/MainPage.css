@@ -1,0 +1,103 @@
+body {
+    background-color: #f5e6cc;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  h1 {
+    color: #8db6ac;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #a89c94;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f0e2d0;
+  }
+  
+  li:hover {
+    background-color: #8db6ac;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  a {
+    background-color: #8db6ac;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 80%;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    background-color: #a89c94;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="Rpassword"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background-color: #f0e2d0;
+  }
+  
+  input[type="submit"] {
+    background-color: #8db6ac;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #a89c94;
+  }
+
+
+#campaigns-characters {
+	background-color: #f0e2d0;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	float: left;
+	margin-right: 20px;
+}
+
+#right-div {
+	background-color: #a89c94;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	float: right;
+	margin-left: 20px;
+}
+#profile-link {
+    margin-top: -30px; 
+    text-align: right;
+  }
+  #welcome-message {
+    background-color: #d1e1e0;
+    padding: 20px;
+    margin-bottom: 20px;
+}

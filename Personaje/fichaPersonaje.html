@@ -37,11 +37,23 @@
                 </tr>
                 <tr>
                     <td>Trasfondo:</td>
-                    <td><input type="text" id="trasfondo"></td>
+                    <td><input type="text" id="trasfondo" name="trasfondo"></td>
                 </tr>
                 <tr>
                     <td>Alineamiento:</td>
-                    <td><input type="text" id="alineamiento"></td>
+                    <td>
+                    <td><select name="alineamiento" id="alineamiento">
+                        <option value="caotico-bueno">Caótico bueno</option>
+                        <option value="neutral-bueno">Neutral bueno</option>
+                        <option value="legal-bueno">Legal bueno</option>
+                        <option value="caotico-neutral">Caótico neutral</option>
+                        <option value="verdadero-neutral">neutral</option>
+                        <option value="legal-neutral">Legal neutral</option>
+                        <option value="caotico-malo">Caótico malo</option>
+                        <option value="neutral-malo">Neutral malo</option>
+                        <option value="legal-malo">Legal malo</option>
+                      </select>
+                      </td>
                 </tr>
             </table>
       
@@ -58,37 +70,37 @@
 
                 <tr>
                     <td>Fuerza</td>
-                    <td><input type="number" id="fuerza_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="fuerza_valor" value="10" onchange="actualizarModificadores()" max="20" name="fuerza"></td>
                     <td><input type="number" id="fuerza_mod" placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Destreza</td>
-                    <td><input type="number" id="destreza_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="destreza_valor" value="10" onchange="actualizarModificadores()" max="20" name="destreza"></td>
                     <td><input type="number" id="destreza_mod"  placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Constitución</td>
-                    <td><input type="number" id="constitucion_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="constitucion_valor" value="10" onchange="actualizarModificadores()" max="20" name="constitucion"></td>
                     <td><input type="number" id="constitucion_mod"  placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Inteligencia</td>
-                    <td><input type="number" id="inteligencia_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="inteligencia_valor" value="10" onchange="actualizarModificadores()" max="20" name="inteligencia"></td>
                     <td><input type="number" id="inteligencia_mod"  placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Sabiduría</td>
-                    <td><input type="number" id="sabiduria_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="sabiduria_valor" value="10" onchange="actualizarModificadores()" max="20" name="sabiduria"></td>
                     <td><input type="number" id="sabiduria_mod"  placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Carisma</td>
-                    <td><input type="number" id="carisma_valor" value="10" onchange="actualizarModificadores()" max="20"></td>
+                    <td><input type="number" id="carisma_valor" value="10" onchange="actualizarModificadores()" max="20" name="carisma"></td>
                     <td><input type="number" id="carisma_mod"  placeholder="0"></td>
                 </tr>
                 
