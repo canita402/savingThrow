@@ -1,0 +1,97 @@
+body {
+    background-color: #d3d3e6;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .container {
+    background-color: #e6e6fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;
+    max-width: 800px;
+  }
+  
+  .fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .columna {
+    flex-basis: 48%;
+  }
+  
+  h2 {
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table th,
+  table td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #b0c4de;
+    color: #333;
+    font-weight: normal;
+  }
+  
+  input[type="text"],
+  select,
+  input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.256 9.256a2.003 2.003 0 0 0-2.828 0L16 20.172l-10.428-10.42a2.003 2.003 0 0 0-2.828 0 2.003 2.003 0 0 0 0 2.828l12 12a2.003 2.003 0 0 0 2.828 0l12-12a2.003 2.003 0 0 0 0-2.828z' fill='%235F4B8B'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"] {
+    width: 50px;
+    text-align: center;
+  }
+  
+  button[type="submit"] {
+    background-color: #5f4b8b;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #8a6db1;
+  }
+  
