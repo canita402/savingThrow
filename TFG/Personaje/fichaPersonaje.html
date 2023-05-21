@@ -21,36 +21,36 @@
             <table>
                 <tr>
                     <td>Nombre:</td>
-                    <td><input type="text" id="nombre" name="nombre"></td>
+                    <td><input type="text" id="nombre" name="nombre" required="true"></td>
                 </tr>
                 <tr>
                     <td>Raza:</td>
-                    <td><input type="text" id="raza" name="raza"></td>
+                    <td><input type="text" id="raza" name="raza" required="true"></td>
                 </tr>
                 <tr>
                     <td>Clase:</td>
-                    <td><input type="text" id="clase" name="clase"></td>
+                    <td><input type="text" id="clase" name="clase" required="true"></td>
                 </tr>
                 <tr>
                     <td>Nivel:</td>
-                    <td><input type="number" id="nivel" name="nivel" max="20" min="1"></td>
+                    <td><input type="number" id="nivel" name="nivel" max="20" min="1" required="true"></td>
                 </tr>
                 <tr>
                     <td>Trasfondo:</td>
-                    <td><input type="text" id="trasfondo" name="trasfondo"></td>
+                    <td><input type="text" id="trasfondo" name="trasfondo" required="true"></td>
                 </tr>
                 <tr>
                     <td>Alineamiento:</td>
                     <td>
-                    <td><select name="alineamiento" id="alineamiento">
+                    <td><select name="alineamiento" id="alineamiento" required="true">
                         <option value="caotico-bueno">Caótico bueno</option>
-                        <option value="neutral-bueno">Neutral bueno</option>
-                        <option value="legal-bueno">Legal bueno</option>
                         <option value="caotico-neutral">Caótico neutral</option>
-                        <option value="verdadero-neutral">neutral</option>
-                        <option value="legal-neutral">Legal neutral</option>
                         <option value="caotico-malo">Caótico malo</option>
+                        <option value="neutral-bueno">Neutral bueno</option>
+                        <option value="verdadero-neutral">neutral</option>
                         <option value="neutral-malo">Neutral malo</option>
+                        <option value="legal-bueno">Legal bueno</option>
+                        <option value="legal-neutral">Legal neutral</option>              
                         <option value="legal-malo">Legal malo</option>
                       </select>
                       </td>
@@ -70,37 +70,37 @@
 
                 <tr>
                     <td>Fuerza</td>
-                    <td><input type="number" id="fuerza_valor" value="10" onchange="actualizarModificadores()" max="20" name="fuerza"></td>
+                    <td><input type="number" id="fuerza_valor" value="10" onchange="actualizarModificadores()" max="20" name="fuerza" required="true"></td>
                     <td><input type="number" id="fuerza_mod" placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Destreza</td>
-                    <td><input type="number" id="destreza_valor" value="10" onchange="actualizarModificadores()" max="20" name="destreza"></td>
+                    <td><input type="number" id="destreza_valor" value="10" onchange="actualizarModificadores()" max="20" name="destreza" required="true"></td>
                     <td><input type="number" id="destreza_mod"  placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Constitución</td>
-                    <td><input type="number" id="constitucion_valor" value="10" onchange="actualizarModificadores()" max="20" name="constitucion"></td>
+                    <td><input type="number" id="constitucion_valor" value="10" onchange="actualizarModificadores()" max="20" name="constitucion" required="true"></td>
                     <td><input type="number" id="constitucion_mod"  placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Inteligencia</td>
-                    <td><input type="number" id="inteligencia_valor" value="10" onchange="actualizarModificadores()" max="20" name="inteligencia"></td>
+                    <td><input type="number" id="inteligencia_valor" value="10" onchange="actualizarModificadores()" max="20" name="inteligencia" required="true"></td>
                     <td><input type="number" id="inteligencia_mod"  placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Sabiduría</td>
-                    <td><input type="number" id="sabiduria_valor" value="10" onchange="actualizarModificadores()" max="20" name="sabiduria"></td>
+                    <td><input type="number" id="sabiduria_valor" value="10" onchange="actualizarModificadores()" max="20" name="sabiduria" required="true"></td>
                     <td><input type="number" id="sabiduria_mod"  placeholder="0"></td>
                 </tr>
 
                 <tr>
                     <td>Carisma</td>
-                    <td><input type="number" id="carisma_valor" value="10" onchange="actualizarModificadores()" max="20" name="carisma"></td>
+                    <td><input type="number" id="carisma_valor" value="10" onchange="actualizarModificadores()" max="20" name="carisma" required="true"></td>
                     <td><input type="number" id="carisma_mod"  placeholder="0"></td>
                 </tr>
                 
@@ -108,6 +108,9 @@
                 </div>
         </div>
         <button type="submit" name="guardar">Guardar</button>
+
+        <button onclick="goToMainPage()" class="atras">Volver atrás</button>
+
     </div>
 </form>
 
@@ -140,6 +143,11 @@ function actualizarModificadores() {
     var puntosCarisma= document.getElementById("carisma_valor").value;
     document.getElementById("carisma_mod").value=Math.floor((puntosCarisma-10)/2);
 }
+
+function goToMainPage() {
+  window.location.href = "../Login/MainPage.php";
+}
+
 
 </script>
 

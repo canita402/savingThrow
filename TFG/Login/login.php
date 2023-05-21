@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
   if ($result->num_rows > 0) {
     // Inicio de sesión exitoso, establecer variable de sesión para el nombre de usuario
   // Después de verificar el inicio de sesión exitoso y antes de redirigir
-  setcookie('username', $username, time() + 3600, '/'); //1h de vida de la cookie
+  setcookie('username', $username, time() + 36000, '/'); //1h de vida de la cookie
   header("Location: MainPage.php");
 
     exit(); 

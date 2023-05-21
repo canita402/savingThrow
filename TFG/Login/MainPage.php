@@ -11,7 +11,7 @@
   <div id="welcome-message">
     <h1>Bienvenido, <?php echo isset($_COOKIE['username']) ? $_COOKIE['username'] : ''; ?></h1>
     <div id="profile-link">
-      <a href="">Ver mi perfil</a>
+      <a href="Login.html">Cerrar Sesión</a>
     </div>
   </div>
 
@@ -21,14 +21,14 @@
     <ul>
       <li><a href="../campaña/campaña.html">Añadir campaña</a></li>
       <br>
-      <li><a href="../campaña/campañaPagina.html">Ver mis campañas</a></li>
+      <li><a href="../campaña/campañaPagina.php">Ver mis campañas</a></li>
     </ul>
     <h2>Personajes</h2>
     <ul>
       <li><a href="../Personaje/fichaPersonaje.html">Añadir Personaje</a></li>
 
     <br>
-      <li><a href="../campaña/campañaPagina.html">Ver mis personajes</a></li>
+      <li><a href="../Personaje/verPersonaje.php">Ver mis personajes</a></li>
     </ul>
   </div>
 

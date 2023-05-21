@@ -94,4 +94,19 @@ body {
   button[type="submit"]:hover {
     background-color: #8a6db1;
   }
+
+  .atras {
+    background-color: #5f4b8b;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .atras:hover {
+    background-color: #8a6db1;
+  }
   
