@@ -22,6 +22,8 @@
       <li><a href="../campaña/campaña.html">Añadir campaña</a></li>
       <br>
       <li><a href="../campaña/campañaPagina.php">Ver mis campañas</a></li>
+      <br>
+      <li><a href="../campaña/aceptarInvitaciones/aceptarInvitaciones.php">Invitaciones a campañas</a></li>
     </ul>
     <h2>Personajes</h2>
     <ul>
