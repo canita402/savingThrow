@@ -41,6 +41,41 @@
         ?>
       </select>
       
+     
+      
+      <label for="campana">Campaña:</label>
+      <select name="campana" id="campana">
+        <!-- Aquí puedes obtener las campañas de tu base de datos y generar las opciones -->
+        <?php
+        // Conexión a la base de datos
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "tfg_db";
+
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+        // Verificar si la conexión fue exitosa
+        if (!$conn) {
+            die("La conexión falló: " . mysqli_connect_error());
+        }
+
+        
+        // Obtener el valor de la cookie "username"
+        $username = $_COOKIE["username"];
+        // Obtener las campañas de la base de datos
+        $sql = "SELECT nombre FROM campanas WHERE usuario = '$username'";
+        $result = mysqli_query($conn, $sql);
+
+        // Generar las opciones del select con las campañas
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<option value="' . $row['nombre'] . '">' . $row['nombre'] . '</option>';
+        }
+
+        // Cerrar la conexión
+        mysqli_close($conn);
+        ?>
+      </select>
       <label for="mensaje">Mensaje:</label>
       <textarea name="mensaje" id="mensaje" rows="5" cols="30"></textarea>
       

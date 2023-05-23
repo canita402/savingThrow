@@ -23,6 +23,8 @@
       <br>
       <li><a href="../campaña/campañaPagina.php">Ver mis campañas</a></li>
       <br>
+      <li><a href="../campaña/invitarJugadores/invitarUsuarios.php">Invitar a tus campañas </a></li>
+      <br>
       <li><a href="../campaña/aceptarInvitaciones/aceptarInvitaciones.php">Invitaciones a campañas</a></li>
     </ul>
     <h2>Personajes</h2>

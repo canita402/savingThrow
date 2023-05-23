@@ -26,11 +26,7 @@ body {
     background-color: #f0e2d0;
   }
   
-  li:hover {
-    background-color: #8db6ac;
-    color: #fff;
-    cursor: pointer;
-  }
+
   
   a {
     background-color: #8db6ac;

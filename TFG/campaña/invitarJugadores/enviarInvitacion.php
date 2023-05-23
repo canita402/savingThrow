@@ -2,6 +2,7 @@
 // Obtener los datos del formulario
 $usuario = $_POST["usuario"];
 $mensaje = $_POST["mensaje"];
+$campana = $_POST["campana"];
 
 // Aquí puedes agregar la lógica para enviar la invitación al usuario seleccionado
 // Puedes utilizar la información de $usuario y $mensaje para personalizar el mensaje de la invitación
@@ -21,8 +22,8 @@ if (!$conn) {
 }
 
 // Insertar la invitación en la base de datos
-$sql = "INSERT INTO invitaciones (usuario, mensaje) 
-        VALUES ('$usuario', '$mensaje')";
+$sql = "INSERT INTO invitaciones (usuario, mensaje, nombre) 
+        VALUES ('$usuario', '$mensaje','$campana')";
 
 if (mysqli_query($conn, $sql)) {
     echo "Invitación enviada correctamente.";

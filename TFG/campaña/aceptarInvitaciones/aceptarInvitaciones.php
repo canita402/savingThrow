@@ -41,9 +41,16 @@
     // Eliminar la invitación de la base de datos
     $deleteSql = "DELETE FROM invitaciones WHERE id = '$invitacionId'";
     if (mysqli_query($conn, $deleteSql)) {
-       '';
+      // Insertar datos en la tabla "campanas"
+      $campanaNombre = "Nombre de la campaña"; // Aquí debes obtener el nombre de la campaña de alguna manera (por ejemplo, mediante un formulario)
+      $insertSql = "INSERT INTO campanas (nombre, usuario) VALUES ('$campanaNombre', '$username')";
+      if (mysqli_query($conn, $insertSql)) {
+        $message = "Invitación aceptada y campaña creada correctamente.";
+      } else {
+        $message = "Error al crear la campaña: " . mysqli_error($conn);
+      }
     } else {
-        $message = "Error al aceptar la invitación: " . mysqli_error($conn);
+      $message = "Error al aceptar la invitación: " . mysqli_error($conn);
     }
   }
 
