@@ -41,13 +41,22 @@
     // Eliminar la invitación de la base de datos
     $deleteSql = "DELETE FROM invitaciones WHERE id = '$invitacionId'";
     if (mysqli_query($conn, $deleteSql)) {
-      // Insertar datos en la tabla "campanas"
-      $campanaNombre = "Nombre de la campaña"; // Aquí debes obtener el nombre de la campaña de alguna manera (por ejemplo, mediante un formulario)
-      $insertSql = "INSERT INTO campanas (nombre, usuario) VALUES ('$campanaNombre', '$username')";
-      if (mysqli_query($conn, $insertSql)) {
-        $message = "Invitación aceptada y campaña creada correctamente.";
+      // Insertar datos en la tabla "campanasInvitadas"
+      $campanaNombre = $_POST["campana"];
+
+      // Verificar si la campaña ya existe en la tabla "campanasInvitadas" para evitar duplicados
+      $checkSql = "SELECT * FROM campanasInvitadas WHERE nombre = '$campanaNombre' AND usuario = '$username'";
+      $checkResult = mysqli_query($conn, $checkSql);
+      if (mysqli_num_rows($checkResult) > 0) {
+        $message = "Ya has aceptado la invitación a esta campaña.";
       } else {
-        $message = "Error al crear la campaña: " . mysqli_error($conn);
+        // Insertar datos en la tabla "campanasInvitadas"
+        $insertSql = "INSERT INTO campanasInvitadas (nombre, usuario) VALUES ('$campanaNombre', '$username')";
+        if (mysqli_query($conn, $insertSql)) {
+          $message = "Invitación aceptada y campaña agregada correctamente.";
+        } else {
+          $message = "Error al agregar la campaña: " . mysqli_error($conn);
+        }
       }
     } else {
       $message = "Error al aceptar la invitación: " . mysqli_error($conn);
@@ -66,6 +75,17 @@
         echo '<p>Mensaje: ' . $row['mensaje'] . '</p>';
         echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
         echo '<input type="hidden" name="invitacion" value="' . $row['id'] . '">';
+
+        // Agregar el select para seleccionar la campaña
+        echo '<label for="campana">Campaña:</label>';
+        echo '<select name="campana" id="campana">';
+        $campanasSql = "SELECT nombre FROM invitaciones WHERE usuario = '$username'";
+        $campanasResult = mysqli_query($conn, $campanasSql);
+        while ($campanaRow = mysqli_fetch_assoc($campanasResult)) {
+          echo '<option value="' . $campanaRow['nombre'] . '">' . $campanaRow['nombre'] . '</option>';
+        }
+        echo '</select>';
+
         echo '<button type="submit">Aceptar Invitación</button>';
         echo '</form>';
         echo '</div>';

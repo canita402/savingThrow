@@ -56,6 +56,23 @@ if (isset($_COOKIE['username'])) {
         echo "No tienes campañas disponibles";
     }
 
+    // Obtener los nombres de las campañas invitadas para el usuario actual
+    $invitadasSql = "SELECT nombre FROM campanasInvitadas WHERE usuario = '$username'";
+    $invitadasResult = mysqli_query($conn, $invitadasSql);
+
+    // Verificar si hay campañas invitadas
+    if (mysqli_num_rows($invitadasResult) > 0) {
+        // Mostrar los nombres de las campañas invitadas
+        echo "<h3>Campañas Invitadas:</h3>";
+        while ($invitadaRow = mysqli_fetch_assoc($invitadasResult)) {
+            $nombreInvitada = $invitadaRow['nombre'];
+            echo "<p>$nombreInvitada</p>";
+        }
+    } else {
+        // No hay campañas invitadas
+        echo "No tienes campañas invitadas";
+    }
+
     // Liberar memoria del resultado
     mysqli_free_result($result);
 } else {

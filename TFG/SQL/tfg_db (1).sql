@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2023 a las 14:06:28
+-- Tiempo de generación: 24-05-2023 a las 12:42:12
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -40,10 +40,32 @@ CREATE TABLE `campanas` (
 --
 
 INSERT INTO `campanas` (`nombre`, `descripcion`, `fecha_inicio`, `num_jugadores`, `usuario`) VALUES
-('dadada', 'dadada', '2023-05-14', 2, 'alvaro'),
-('Nombre de la campaña', '', '0000-00-00', 0, 'alvaro'),
-('para PruebaCampañas', 'dfadada', '2023-05-04', 3, 'alvaro'),
-('pruebaCampaña', 'asdada', '2023-05-01', 3, 'creaCampañas23');
+('campaña para alvaro', '1212312', '2023-05-14', 3, 'creaCampañas23'),
+('campañaDeAlvaro', 'asdadadad', '2023-05-03', 3, 'alvaro'),
+('funcional', 'adadadad', '2023-05-17', 3, 'alvaro'),
+('pruebaCampaña', 'dadadad', '2023-05-07', 3, 'creaCampañas23');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `campanasinvitadas`
+--
+
+CREATE TABLE `campanasinvitadas` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(30) NOT NULL,
+  `nombre` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `campanasinvitadas`
+--
+
+INSERT INTO `campanasinvitadas` (`id`, `usuario`, `nombre`) VALUES
+(7, 'creaCampañas23', 'pruebaCampaña'),
+(8, 'alvaro', 'campañaDeAlvaro'),
+(9, 'creaCampañas23', 'funcional'),
+(10, 'alvaro', 'campaña para alvaro');
 
 -- --------------------------------------------------------
 
@@ -57,13 +79,6 @@ CREATE TABLE `invitaciones` (
   `mensaje` varchar(100) NOT NULL,
   `nombre` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `invitaciones`
---
-
-INSERT INTO `invitaciones` (`id`, `usuario`, `mensaje`, `nombre`) VALUES
-(10, 'alvaro', 'adad', 'para PruebaCampañas');
 
 -- --------------------------------------------------------
 
@@ -130,6 +145,14 @@ ALTER TABLE `campanas`
   ADD KEY `fk_personaje_usuario2` (`usuario`);
 
 --
+-- Indices de la tabla `campanasinvitadas`
+--
+ALTER TABLE `campanasinvitadas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `usuario` (`usuario`),
+  ADD KEY `nombre` (`nombre`);
+
+--
 -- Indices de la tabla `invitaciones`
 --
 ALTER TABLE `invitaciones`
@@ -154,10 +177,16 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `campanasinvitadas`
+--
+ALTER TABLE `campanasinvitadas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT de la tabla `invitaciones`
 --
 ALTER TABLE `invitaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas
@@ -168,6 +197,13 @@ ALTER TABLE `invitaciones`
 --
 ALTER TABLE `campanas`
   ADD CONSTRAINT `fk_personaje_usuario2` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`usuario`);
+
+--
+-- Filtros para la tabla `campanasinvitadas`
+--
+ALTER TABLE `campanasinvitadas`
+  ADD CONSTRAINT `campanasinvitadas_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`usuario`),
+  ADD CONSTRAINT `campanasinvitadas_ibfk_2` FOREIGN KEY (`nombre`) REFERENCES `campanas` (`nombre`);
 
 --
 -- Filtros para la tabla `invitaciones`
