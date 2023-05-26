@@ -138,3 +138,18 @@ body {
 .contact-info a:hover {
   background-color: #a89c94;
 }
+body {
+  font-family: "Arial", sans-serif;
+}
+
+p {
+  font-family: "Tahoma", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#footer {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: center;
+}

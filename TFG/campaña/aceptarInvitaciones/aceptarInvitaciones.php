@@ -63,37 +63,39 @@
     }
   }
 
+  
   // Obtener las invitaciones de la base de datos para el usuario de la cookie
   $sql = "SELECT id, mensaje FROM invitaciones WHERE usuario = '$username'";
   $result = mysqli_query($conn, $sql);
-
+  
   // Verificar si hay invitaciones
   if (mysqli_num_rows($result) > 0) {
     // Mostrar las invitaciones en divs separados
     while ($row = mysqli_fetch_assoc($result)) {
-        echo '<div class="invitacion">';
-        echo '<p>Mensaje: ' . $row['mensaje'] . '</p>';
-        echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
-        echo '<input type="hidden" name="invitacion" value="' . $row['id'] . '">';
-
-        // Agregar el select para seleccionar la campaña
-        echo '<label for="campana">Campaña:</label>';
-        echo '<select name="campana" id="campana">';
-        $campanasSql = "SELECT nombre FROM invitaciones WHERE usuario = '$username'";
-        $campanasResult = mysqli_query($conn, $campanasSql);
-        while ($campanaRow = mysqli_fetch_assoc($campanasResult)) {
-          echo '<option value="' . $campanaRow['nombre'] . '">' . $campanaRow['nombre'] . '</option>';
-        }
-        echo '</select>';
-
-        echo '<button type="submit">Aceptar Invitación</button>';
-        echo '</form>';
-        echo '</div>';
+      echo '<div class="invitacion">';
+      echo '<p>Mensaje: ' . $row['mensaje'] . '</p>';
+      echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
+      echo '<input type="hidden" name="invitacion" value="' . $row['id'] . '">';
+  
+      // Agregar el párrafo para mostrar la campaña
+      $campanasSql = "SELECT nombre FROM invitaciones WHERE usuario = '$username'";
+      $campanasResult = mysqli_query($conn, $campanasSql);
+      $campanaNames = array();
+      while ($campanaRow = mysqli_fetch_assoc($campanasResult)) {
+        $campanaNames[] = $campanaRow['nombre'];
+      }
+      echo '<p>Campaña: ' . implode(', ', $campanaNames) . '</p>';
+  
+      echo '<button type="submit" style="text-align: center;">Aceptar Invitación</button>';
+      echo '</form>';
+      echo '</div>';
     }
   } else {
     // Mostrar el mensaje de que no hay invitaciones
     echo '<p>No tienes invitaciones pendientes.</p>';
   }
+ 
+  
 
   // Cerrar la conexión
   mysqli_close($conn);
@@ -109,10 +111,11 @@
     ?>
   </div>
   
-  <!-- Botón para volver a la página principal -->
-  <form action="../../Login/mainPage.php">
-    <button type="submit">Volver a la página principal</button>
-  </form>
+ 
+
+<form action="../../Login/mainPage.php" style="text-align: center;">
+  <button type="submit">Volver a la página principal</button>
+</form>
 
 </body>
 </html>
