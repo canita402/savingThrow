@@ -14,3 +14,43 @@ body {
     text-align: center;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
+  .campaigns-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.column {
+    margin: 0 20px;
+    text-align: center;
+}
+
+.column h3 {
+    margin-top: 0;
+}
+
+.campaigns-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.column {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.post-it {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none; 
+  color: #333; 
+}
+
+
+a:hover {
+  color: #555; 
+}
