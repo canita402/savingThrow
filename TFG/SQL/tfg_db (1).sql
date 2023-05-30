@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-05-2023 a las 12:42:12
+-- Tiempo de generación: 30-05-2023 a las 12:34:56
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -41,9 +41,11 @@ CREATE TABLE `campanas` (
 
 INSERT INTO `campanas` (`nombre`, `descripcion`, `fecha_inicio`, `num_jugadores`, `usuario`) VALUES
 ('campaña para alvaro', '1212312', '2023-05-14', 3, 'creaCampañas23'),
-('campañaDeAlvaro', 'asdadadad', '2023-05-03', 3, 'alvaro'),
-('funcional', 'adadadad', '2023-05-17', 3, 'alvaro'),
-('pruebaCampaña', 'dadadad', '2023-05-07', 3, 'creaCampañas23');
+('campañaDeAlvaro', 'actualizadaotravez', '2023-05-22', 3, 'alvaro'),
+('funcional', 'dfsdfsdfsf', '2023-05-17', 3, 'alvaro'),
+('prueba css', 'asdadad', '2023-05-11', 4, 'creaCampañas23'),
+('pruebaCampaña', 'dadadad', '2023-05-07', 3, 'creaCampañas23'),
+('pruebas css 2 ', 'dasdada', '2023-09-15', 4, 'alvaro');
 
 -- --------------------------------------------------------
 
@@ -65,7 +67,8 @@ INSERT INTO `campanasinvitadas` (`id`, `usuario`, `nombre`) VALUES
 (7, 'creaCampañas23', 'pruebaCampaña'),
 (8, 'alvaro', 'campañaDeAlvaro'),
 (9, 'creaCampañas23', 'funcional'),
-(10, 'alvaro', 'campaña para alvaro');
+(10, 'alvaro', 'campaña para alvaro'),
+(11, 'alvaro', 'prueba css');
 
 -- --------------------------------------------------------
 
@@ -79,6 +82,13 @@ CREATE TABLE `invitaciones` (
   `mensaje` varchar(100) NOT NULL,
   `nombre` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `invitaciones`
+--
+
+INSERT INTO `invitaciones` (`id`, `usuario`, `mensaje`, `nombre`) VALUES
+(20, 'creaCampañas23', 'dadad', 'pruebas css 2 ');
 
 -- --------------------------------------------------------
 
@@ -180,13 +190,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `campanasinvitadas`
 --
 ALTER TABLE `campanasinvitadas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `invitaciones`
 --
 ALTER TABLE `invitaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas

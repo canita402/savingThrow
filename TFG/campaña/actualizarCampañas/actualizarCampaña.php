@@ -27,8 +27,8 @@
           <input type="number" id="num-jugadores" name="num-jugadores" min="1" value="<?php echo $_GET['num_jugadores'] ?? ''; ?>" required>
         </div>
         <div class="button-container">
-          <input type="submit" value="Guardar" class="button">
-          <button onclick="location.href='../Login/mainPage.php';" class="button">Volver</button>
+          <input type="submit" value="Guardar" class="button" name="guardar">
+          <button onclick="location.href='../campaña/campañaPagina.php';" class="button">Volver</button>
         </div>
       </fieldset>
     </form>
