@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario de Campaña de D&D</title>
+    <link rel="stylesheet" href="campaña.css">
+  </head>
+  <body>
+    <h1>Datos de la campaña</h1>
+    <form action="campaña.php" method="post">
+      <fieldset>
+        <legend>Información de la Campaña</legend>
+        <div>
+          <label for="nombre-campana">Nombre de la Campaña:</label>
+          <input type="text" id="nombre-campana" name="nombre-campana" required>
+        </div>
+        <div>
+          <label for="descripcion-campana">Descripción de la Campaña:</label>
+          <textarea id="descripcion-campana" name="descripcion-campana" required></textarea>
+        </div>
+        <div>
+          <label for="fecha-inicio">Fecha de Inicio:</label>
+          <input type="date" id="fecha-inicio" name="fecha-inicio" required>
+        </div>
+        <div>
+          <label for="num-jugadores">Número de Jugadores:</label>
+          <input type="number" id="num-jugadores" name="num-jugadores" min="1" required>
+        </div>
+        <div class="button-container">
+          <input type="submit" value="Guardar" class="button">
+          <button onclick="location.href='../Login/mainPage.php';" class="button">Volver</button>
+
+          
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

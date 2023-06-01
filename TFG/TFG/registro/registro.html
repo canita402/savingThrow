@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registrar usuario</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estiloRegistro.css">
+  </head>
+  <body>
+    <h1 align="center">Registrar usuario</h1>
+    <form method="post" action="registro.php">
+      <label for="username">Usuario:</label><br>
+      <input type="text" id="username" name="username" required="true"><br>
+
+      <label for="password">Contraseña:</label><br>
+      <input type="password" id="password" name="password" required="true"><br><br>
+
+      <label for="Rpassword">Repetir Contraseña:</label><br> 
+      <input type="password" id="Rpassword" name="Rpassword" required="true"><br><br>
+      
+      <input type="submit" value="Registrarse" class="button">
+      <button onclick="window.location.href = '../login/login.html';" class="button">Volver</button>
+
+    </form>
+
+    
+    <script>
+      document.querySelector('.button').onclick = function check() {
+        var password = document.querySelector('#password').value;
+        var Rpassword = document.querySelector('#Rpassword').value;
+
+
+        if (password != Rpassword) {
+          alert("Las contraseñas no coinciden");
+          return false;
+        } 
+        else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
