@@ -13,8 +13,10 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Comprobación de existencia del usuario
-$sql = "SELECT * FROM usuarios WHERE usuario = '$username'";
-$result = $conn->query($sql);
+$stmt = $conn->prepare("SELECT * FROM usuarios WHERE usuario = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
   $message = "El usuario ya existe en la base de datos";
@@ -22,17 +24,19 @@ if ($result->num_rows > 0) {
   exit(); // Terminar la ejecución del script
 } else {
   // Inserción de datos en la base de datos
-  $insertSql = "INSERT INTO usuarios (usuario, contraseña) VALUES ('$username', '$password')";
-
-  if ($conn->query($insertSql) === TRUE) {
+  $stmt = $conn->prepare("INSERT INTO usuarios (usuario, contraseña) VALUES (?, ?)");
+  $stmt->bind_param("ss", $username, $password);
+  
+  if ($stmt->execute()) {
     $message = "Usuario registrado con éxito";
     // Redireccionar al usuario a la página login.html después de mostrar el mensaje
     echo "<script>alert('$message'); window.location.href = '../Login/Login.html';</script>";
     exit(); // Terminar la ejecución del script
   } else {
-    $message = "Error al insertar datos: " . $conn->error;
+    $message = "Error al insertar datos: " . $stmt->error;
   }
 }
 
 $conn->close();
+
 ?>

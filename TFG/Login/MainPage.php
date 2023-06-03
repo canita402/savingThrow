@@ -39,54 +39,54 @@
   <div id="right-div">
     <p>Podeis contactarme por:</p>
     <div class="contact-info">
-      <a href="mailto:alvaromaker402@gmail.com">Correo electrónico</a>
+      <a href="mailto:alvaromaker402@gmail.com" target="_blank">Correo electrónico</a>
     </div>
     <br>
     <br>
     <div class="contact-info">
-      <a href="https://www.linkedin.com/in/alvarocaña/">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/alvarocaña/" target="_blank">LinkedIn</a>
     </div>
     <br>
     <br>
     <div class="contact-info">
-      <a href="https://github.com/canita402">GitHub</a>
+      <a href="https://github.com/canita402" target="_blank">GitHub</a>
     </div>
   </div>
 
-  
   <div style="text-align:center;">
     <p>Saving Throw es una herramienta de gestión de recursos diseñada específicamente para juegos de rol. Con esta herramienta, los jugadores pueden llevar un registro preciso de sus puntos de vida, magia y otros recursos importantes durante las partidas. Además, Saving Throw ofrece una amplia variedad de funciones personalizables que te permiten adaptarla a las necesidades de tu partida.</p>
     <p>Con Saving Throw, podrás hacer un seguimiento de tus personajes y sus estadísticas, como habilidades y atributos, así como permitir crear campañas y añadir a otros jugadores a sus campañas.</p>
-    <p>Para futuras sugenerencias, podeis contactarme en la pestañita de contacto, en el que encontrareis mi correo, mi lindedin y mi github</p>
+    <p>Para futuras sugenerencias, podeis contactarme en la pestañita de contacto, en el que encontrareis mi correo, mi linkedin y mi github</p>
     <p>Saving Throw es un proyecto de final de grado del curso de Desarrollo de Aplicaciones Multiplataforma, hecho por Alvaro Caña, un alumno del IES El Cañaveral</p>
   </div>
   <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
   <div id="footer">
     <p>&copy; 2023 Todos los derechos reservados.</p>
   </div>

@@ -36,6 +36,7 @@ if (isset($_COOKIE['username'])) {
     
     </head>
     <body>
+   
     <div class="campaigns-wrapper">
         <div class="column">
             <?php
@@ -103,5 +104,9 @@ mysqli_free_result($result);
 // Cerrar la conexión a la base de datos
 mysqli_close($conn);
 ?>
+
+<div class="button-wrapper">
+        <button onclick="window.location.href='../login/mainPage.php';" class="button" name="volverMainPage">Volver a la página principal</button>
+</div>
 </body>
 </html>

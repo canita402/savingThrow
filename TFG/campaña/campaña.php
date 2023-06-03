@@ -22,18 +22,28 @@ $num_jugadores = $_POST["num-jugadores"];
 if (isset($_COOKIE['username'])) {
     $username = $_COOKIE['username'];
 
-    // Insertar los datos en la base de datos
+    // Construir la consulta SQL con una sentencia preparada
     $sql = "INSERT INTO campanas (nombre, descripcion, fecha_inicio, num_jugadores, usuario) 
-            VALUES ('$nombre_campana', '$descripcion_campana', '$fecha_inicio', '$num_jugadores', '$username')";
+            VALUES (?, ?, ?, ?, ?)";
 
-    if (mysqli_query($conn, $sql)) {
+    // Preparar la consulta SQL
+    $stmt = mysqli_prepare($conn, $sql);
+
+    // Vincular los parámetros
+    mysqli_stmt_bind_param($stmt, "sssss", $nombre_campana, $descripcion_campana, $fecha_inicio, $num_jugadores, $username);
+
+    // Ejecutar la consulta SQL
+    if (mysqli_stmt_execute($stmt)) {
         $message = "Se han guardado los datos";
         // Redireccionar al usuario a la página login.html después de mostrar el mensaje
         echo "<script>alert('$message'); window.location.href = 'campaña.html';</script>";
-        exit(); 
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+
+    // Cerrar la sentencia preparada
+    mysqli_stmt_close($stmt);
 } else {
     echo "La cookie 'username' no está definida.";
 }

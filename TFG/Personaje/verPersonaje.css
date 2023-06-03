@@ -14,3 +14,8 @@ body {
     text-align: center;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }

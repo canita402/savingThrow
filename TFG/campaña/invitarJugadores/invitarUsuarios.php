@@ -9,7 +9,7 @@
   <h1>Enviar Invitación de Juego</h1>
   
   <div>
-    <form method="post" action="enviarInvitacion.php">
+    <form method="post" action="enviarInvitacion.php" id="invitacionForm">
       <label for="usuario">Usuario:</label>
       <select name="usuario" id="usuario">
         <!-- Aquí puedes obtener los usuarios de tu base de datos y generar las opciones -->
@@ -80,7 +80,17 @@
       <textarea name="mensaje" id="mensaje" rows="5" cols="30"></textarea>
       
       <input type="submit" value="Enviar Invitación">
+      
+      <!-- Agregar el botón para volver a mainpage.php -->
+      <button type="button" onclick="window.location.href='../../login/MainPage.php'">Volver</button>
     </form>
   </div>
+
+  <script>
+    // Evitar que el botón volver envíe el formulario
+    document.querySelector("button[type='button']").addEventListener("click", function(e) {
+      e.preventDefault();
+    });
+  </script>
 </body>
 </html>

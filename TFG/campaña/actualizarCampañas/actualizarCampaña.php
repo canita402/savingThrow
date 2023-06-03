@@ -28,7 +28,7 @@
         </div>
         <div class="button-container">
           <input type="submit" value="Guardar" class="button" name="guardar">
-          <button onclick="location.href='../campaña/campañaPagina.php';" class="button">Volver</button>
+          <button onclick="window.location.href='campañaPagina.php';" class="button" name="volver">Volver</button>
         </div>
       </fieldset>
     </form>

@@ -33,6 +33,9 @@ if (isset($_POST['guardar'])) {
         // Mostrar mensaje emergente con JavaScript
         echo "<script>alert('Error al actualizar los datos de la campaña: " . mysqli_error($conn) . "');</script>";
     }
+} elseif (isset($_POST['volver'])) {
+    header("Location: ../campañaPagina.php");
+    exit;
 }
 
 // Cerrar la conexión a la base de datos

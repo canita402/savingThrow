@@ -36,13 +36,14 @@
 
   // Verificar si se envió un formulario y se presionó el botón "Aceptar Invitación"
   if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["invitacion"])) {
+    
     $invitacionId = $_POST["invitacion"];
 
     // Eliminar la invitación de la base de datos
     $deleteSql = "DELETE FROM invitaciones WHERE id = '$invitacionId'";
     if (mysqli_query($conn, $deleteSql)) {
       // Insertar datos en la tabla "campanasInvitadas"
-      $campanaNombre = $_POST["campana"];
+      $campanaNombre = $_POST["nombre"];
 
       // Verificar si la campaña ya existe en la tabla "campanasInvitadas" para evitar duplicados
       $checkSql = "SELECT * FROM campanasInvitadas WHERE nombre = '$campanaNombre' AND usuario = '$username'";
@@ -53,7 +54,7 @@
         // Insertar datos en la tabla "campanasInvitadas"
         $insertSql = "INSERT INTO campanasInvitadas (nombre, usuario) VALUES ('$campanaNombre', '$username')";
         if (mysqli_query($conn, $insertSql)) {
-          $message = "Invitación aceptada y campaña agregada correctamente.";
+          $message = "";
         } else {
           $message = "Error al agregar la campaña: " . mysqli_error($conn);
         }
@@ -64,37 +65,33 @@
   }
 
   
-  // Obtener las invitaciones de la base de datos para el usuario de la cookie
-  $sql = "SELECT id, mensaje FROM invitaciones WHERE usuario = '$username'";
-  $result = mysqli_query($conn, $sql);
-  
-  // Verificar si hay invitaciones
-  if (mysqli_num_rows($result) > 0) {
-    // Mostrar las invitaciones en divs separados
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo '<div class="invitacion">';
-      echo '<p>Mensaje: ' . $row['mensaje'] . '</p>';
-      echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
-      echo '<input type="hidden" name="invitacion" value="' . $row['id'] . '">';
-  
-      // Agregar el párrafo para mostrar la campaña
-      $campanasSql = "SELECT nombre FROM invitaciones WHERE usuario = '$username'";
-      $campanasResult = mysqli_query($conn, $campanasSql);
-      $campanaNames = array();
-      while ($campanaRow = mysqli_fetch_assoc($campanasResult)) {
-        $campanaNames[] = $campanaRow['nombre'];
-      }
-      echo '<p>Campaña: ' . implode(', ', $campanaNames) . '</p>';
-  
-      echo '<button type="submit" style="text-align: center;">Aceptar Invitación</button>';
-      echo '</form>';
-      echo '</div>';
-    }
-  } else {
-    // Mostrar el mensaje de que no hay invitaciones
-    echo '<p>No tienes invitaciones pendientes.</p>';
+// Obtener las invitaciones de la base de datos para el usuario de la cookie
+$sql = "SELECT id, mensaje, nombre FROM invitaciones WHERE usuario = '$username'";
+$result = mysqli_query($conn, $sql);
+
+// Verificar si hay invitaciones
+if (mysqli_num_rows($result) > 0) {
+  // Mostrar las invitaciones en divs separados
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo '<div class="invitacion">';
+    echo '<p>Mensaje: ' . $row['mensaje'] . '</p>';
+    echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
+    echo '<input type="hidden" name="invitacion" value="' . $row['id'] . '">';
+    
+    $campanaNombre = $row['nombre'];
+    echo '<input type="hidden" name="nombre" value="' . $campanaNombre . '">';
+
+    echo '<p>Campaña: ' . $campanaNombre . '</p>';
+
+    echo '<button type="submit" style="text-align: center;">Aceptar Invitación</button>';
+    echo '</form>';
+    echo '</div>';
   }
- 
+} else {
+  // Mostrar el mensaje de que no hay invitaciones
+  echo '<p>No tienes invitaciones pendientes.</p>';
+}
+
   
 
   // Cerrar la conexión

@@ -34,9 +34,9 @@ if (isset($_COOKIE['username'])) {
             // Mostrar el div con los datos del personaje
             echo '<div class="post-it">';
             echo '<h2 class="nombre">' . $nombre . '</h2>';
-            echo '<p class="raza">' . $raza . '</p>';
-            echo '<p class="clase">' . $clase . '</p>';
-            echo '<p class="nivel">Nivel: ' . $nivel . '</p>';
+            echo '<p class="raza"> Raza:' . $raza . '</p>';
+            echo '<p class="clase"> Clase: ' . $clase . '</p>';
+            echo '<p class="nivel"> Nivel: ' . $nivel . '</p>';
             echo '</div>';
         }
     } else {
@@ -62,5 +62,8 @@ mysqli_close($conn);
   <meta charset="UTF-8">
 </head>
 <body>
+<div class="button-wrapper">
+        <button onclick="window.location.href='../login/mainPage.php';" class="button" name="volverMainPage">Volver a la página principal</button>
+      </div>
 </body>
 </html>

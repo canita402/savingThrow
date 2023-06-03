@@ -25,17 +25,26 @@ $carisma = $_POST["carisma"];
 if (isset($_COOKIE['username'])) {
     $username = $_COOKIE['username'];
 
-    // Construir la consulta SQL para insertar los valores en la tabla
+    // Construir la consulta SQL con una sentencia preparada
     $sql = "INSERT INTO personaje (nombre, usuario, raza, clase, nivel, trasfondo, alineamiento, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma)
-            VALUES ('$nombre', '$username', '$raza', '$clase', '$nivel', '$trasfondo', '$alineamiento', '$fuerza', '$destreza', '$constitucion', '$inteligencia', '$sabiduria', '$carisma')";
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    // Preparar la consulta SQL
+    $stmt = mysqli_prepare($conexion, $sql);
+    
+    // Vincular los parámetros
+    mysqli_stmt_bind_param($stmt, "ssssissssssss", $nombre, $username, $raza, $clase, $nivel, $trasfondo, $alineamiento, $fuerza, $destreza, $constitucion, $inteligencia, $sabiduria, $carisma);
 
     // Ejecutar la consulta SQL
-    if (mysqli_query($conexion, $sql)) {
+    if (mysqli_stmt_execute($stmt)) {
         echo "<script>alert('Los datos se han guardado correctamente.');</script>";
         echo "<script>window.location.href = '../Login/MainPage.php';</script>";
     } else {
         echo "Ha ocurrido un error al guardar los datos: " . mysqli_error($conexion);
     }
+
+    // Cerrar la sentencia preparada
+    mysqli_stmt_close($stmt);
 } else {
     echo "La cookie 'username' no está definida.";
 }
